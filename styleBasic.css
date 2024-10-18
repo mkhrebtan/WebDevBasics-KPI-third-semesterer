@@ -137,7 +137,7 @@
 
 .block2 li a{
     display: block;
-    background: rgba(252, 247, 243, 0.5);
+    background: rgba(252, 247, 243, 0.3);
     color: #000;
     padding: 8px 16px;
     text-decoration: none;
