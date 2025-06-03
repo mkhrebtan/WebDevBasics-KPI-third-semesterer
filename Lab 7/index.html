@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/b22b3043c0.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 7</title> 
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">           
+            <div class="blockX">
+                <h4>Home page</h4>
+            </div>
+            <p class="header-text">Lab № 6</p>  
+        </div>
+        <div class="main">
+            <div class="part-left">
+                <div class="part-up">
+                    <div class="block2">
+                        <ul>
+                            <li><a class="active" href="index.html">Home</a></li>                                                      
+                        </ul>
+                    </div>
+                    <div class="part-center">
+                        <div class="block3">                            
+                            
+                        </div>
+                        <div class="block5">
+                            <button id="openPopup">Double-click me!</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="blockY">
+                        
+                    </div>
+                    <p class="footer-text">Lab №6</p>                   
+                </div>
+            </div>
+            <div class="block4">
+                
+            </div>
+        </div>        
+    </div>
+    <div class="blur-overlay" id="blurOverlay"></div>
+    <div class="popup" id="popup">
+        <div class="popup-head">            
+            <button class="closePopupBtn" id="closePopup">
+                <i class="fa-solid fa-xmark fa-lg" style="color: #000000;"></i>
+            </button>
+            <button id="start" onclick="startBtnFunc()">Start</button>
+            <button id="reload" style="display: none;" onclick="reloadBtnFunc()">Reload</button>
+        </div>
+        <div class="anim" id="anim">
+            
+        </div>
+        <div class="controls">
+            
+        </div>
+    </div>
+</body>
