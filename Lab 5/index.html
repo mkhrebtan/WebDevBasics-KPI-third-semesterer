@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/b22b3043c0.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="task1.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 5</title> 
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <i class="fa-solid fa-bars fa-2xl menu-icon"></i>
+                </button>               
+                <div class="dropdown-content">
+                    <a href="page 1.html">Page 1</a>
+                    <a href="page 2.html">Page 2</a>
+                    <a href="page 3.html">Page 3</a>
+                    <a href="page 4.html">Page 4</a>
+                </div>
+            </div>
+            <p class="header-text-mobile">Home page</p>
+            <div class="return-home">
+                <button class="returnbtn">
+                    <a href="index.html">
+                        <i class="fa-solid fa-house fa-2xl"></i>
+                    </a>
+                    
+                </button>
+            </div>
+            <div class="blockX">
+                <h4>Home page</h4>
+            </div>
+            
+            <p class="header-text" id="headTxt">Lab № 4(header)</p>  
+        </div>
+        <div class="main">
+            <div class="part-left">
+                <div class="part-up">
+                    <div class="block2">
+                        <ul>
+                            <li><a class="active" href="index.html">Home</a></li>
+                            <li><a href="page 1.html">Page 1</a></li>
+                            <li><a href="page 2.html">Page 2</a></li>
+                            <li><a href="page 3.html">Page 3</a></li>
+                            <li><a href="page 4.html">Page 4</a></li>
+                        </ul>
+                        
+                    </div>
+                    <div class="part-center">
+                        <div class="block3">
+                            <button onclick="changeText()">Change</button>
+                            <form class="form-pentagonArea" onsubmit="event.preventDefault(); calcPentagonArea()">
+                                <h4 class="form-pentagonArea-heading">
+                                    Calculate pentagon area
+                                </h4>
+                                <div class="form-pentagonArea-input">
+                                    <label for="sideLength">Side length:</label>
+                                    <input type="number" id="sideLength" name="sideLength" step="0.5" required>
+                                </div>
+                                <p class="form-pentagonArea-result" id="resultPentagon"></p>
+                                <button type="submit">Calculate</button>
+                            </form>
+                            <form class="form-triangle" id="formTriangle" onsubmit="event.preventDefault(); checkTriangle();">
+                                <h4 class="form-triangle-heading">
+                                    Triangle
+                                </h4>
+                                <div class="form-triangle-inputA">
+                                    <label for="sideA">Side A length:</label>
+                                    <input type="number" id="sideA" name="sideA" step="0.5" required>                                        
+                                </div>
+                                <div class="form-triangle-inputB">
+                                    <label for="sideB">Side B length:</label>
+                                    <input type="number" id="sideB" name="sideB" step="0.5" required>
+                                </div>
+                                <div class="form-triangle-inputC">
+                                    <label for="sideC">Side C length:</label>
+                                    <input type="number" id="sideC" name="sideC" step="0.5" required>
+                                </div>
+                                <button type="submit">Calculate</button>
+                            </form>
+                            <form onsubmit="event.preventDefault();">
+                                <label>
+                                    <input type="checkbox" id="capitalizeCheckbox" onblur="handleBlurEvent(this)"> Set first letters to uppercase
+                                </label>
+                            </form>
+                            <div class="block-list">
+                                <ul id="bList">
+                                    <li id="b1" ondblclick="openForm(this.id)">Block 1</li>
+                                    <li id="b2" ondblclick="openForm(this.id)">Block 2</li>
+                                    <li id="b3" ondblclick="openForm(this.id)">Block 3</li>
+                                    <li id="b4" ondblclick="openForm(this.id)">Block 4</li>
+                                    <li id="b5" ondblclick="openForm(this.id)">Block 5</li>
+                                    <li id="b6" ondblclick="openForm(this.id)">Block 6</li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        <div class="block5">
+                            <h2>Lorem Ipsum</h2>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="blockY">
+                        <h4>Next: Page 1</h4>
+                    </div>
+                    
+                    <p class="footer-text" id="footTxt">Lab №4(footer)</p>
+                    <p class="footer-text-mobile">Lab №3 - Mobile layout</p>
+                </div>
+            </div>
+            <div class="block4" id="block4">
+                <h2 id="b4h2">what is lorem ipsum?</h2>
+                <p>
+                    lorem ipsum is simply dummy text of the printing and typesetting industry. lorem ipsum has been the industry's standard dummy text ever since the 1500s, 
+                    when an unknown printer took a galley of type and scrambled it to make a type specimen book. it has survived not only five centuries, but also the leap into electronic typesetting, 
+                    remaining essentially unchanged. it was popularised in the 1960s with the release of letraset sheets containing lorem ipsum passages, and more recently with desktop publishing software like aldus pagemaker including versions of lorem ipsum.
+                </p>
+                
+            </div>
+        </div>        
+    </div>
+    <div class="blur-overlay" id="blurOverlay"></div>
+    <div class="popup" id="popup">
+        <div class="popup-head">
+            <h4>Block</h4>
+            <button class="closePopupBtn" id="closePopup" onclick="closePopup()">
+                <i class="fa-solid fa-xmark fa-lg" style="color: #000000;"></i>
+            </button>
+        </div>
+        <form class="formPopup" onsubmit="event.preventDefault();">
+            <label for="inputText">Text:</label>
+            <textarea class="textAreaPopup" id="inputText" required></textarea>
+            <div class="buttons-block">
+                <button type="submit" id="saveBtnPopup" onclick="saveText()">Save</button>
+                <button type="button" id="deleteBtnPopup" onclick="deleteText()">Delete</button>
+            </div>
+        </form>
+    </div>
+</body>
